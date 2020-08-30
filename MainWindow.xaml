@@ -1,0 +1,19 @@
+﻿<Window x:Class="ToDoAPPWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoAPPWPF"
+        mc:Ignorable="d"
+        Title="СПИСОК ДЕЛ" Height="400" Width="800" Icon="cropped-NEW_LOGO-2.png" WindowStartupLocation="CenterScreen" Cursor="Pen" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="dgToDoList" FontFamily="Times New Roman" FontSize="16" FontWeight="ExtraBold" Margin="5" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding ="{Binding Path = CreationDate}" Header="Дата создания" Width="1.1*" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding Path= IsDone, UpdateSourceTrigger=PropertyChanged}" Header="Выполнено" Width="0.9*" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding Path= Text}" Header="Что делать?" Width="4*" IsReadOnly="False" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</Window>
